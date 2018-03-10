@@ -26,14 +26,18 @@ public class ScoreController : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision ){
 		
-		if (collision.gameObject.tag== "SmallStarTag") {
+		if (collision.gameObject.tag == "SmallStarTag") {
+			this.score += 10;
+
+
+		} else if (collision.gameObject.tag == "LargeStarTag") {
 			this.score += 50;
-
-
-		}  else if (collision.gameObject.tag== "LargeStarTag") {
-			this.score += 100;
 		
 
+		} else if (collision.gameObject.tag == "SmallCloudTag") {
+			this.score += 30;
+		} else if (collision.gameObject.tag == "LargeCloudTag") {
+			this.score += 100;Debug.Log (this.score);
 		}
 
 }
